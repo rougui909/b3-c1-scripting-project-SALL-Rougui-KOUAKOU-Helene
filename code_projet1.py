@@ -1,9 +1,6 @@
 import csv
 
-def additionner(x, y):
-    result = x + y
-    return result
-
+    
 
 tableau = [] #déclaration de tableau vide pour les données 
 with open('conso-annuelles_v1.csv', 'r') as in_file, open ('conso-clean.csv', 'w') as out_file:
