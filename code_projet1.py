@@ -15,3 +15,43 @@ with open('conso-annuelles_v1.csv', 'r') as in_file, open ('conso-clean.csv', 'w
     #affiche le fichier conso-annuelles
     for d in tableau:
         print (d)
+
+    #Addition des consommations
+
+    t=[]
+    x=[]
+
+    t.append(float(ligne[2])) 
+    x.append(float(ligne[3])) 
+     
+    print(t)
+    print(x)
+
+
+    with open('conso-annuelles_v1.csv') as file:
+            total = sum(float(ligne[2]) and float(ligne[3]) for ligne in csv.reader(file))
+
+    #Tri par type et Regroupement dans l'ordre décroissant
+    lignes_ordonnees = sorted(csv.reader, key=lambda test: ecrire, reverse=True)
+
+    with open('conso-annuelles-v1.csv', 'w', newline='') as file:
+
+                    ecrire = csv.writer(file, delimiter=';',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    for ligne in lignes_ordonnees:
+                        ecrire.writerow(ligne)
+    for ligne in lignes_ordonnees:
+                    print(ligne)
+            
+
+    #Tri par consommation et Regroupement par consommation dans l'ordre décroissant
+    lignes_ordonnees = sorted(csv.reader, key=lambda test: ecrire, reverse= True)
+
+    with open('conso-annuelles-v1.csv', 'w', newline='') as file:
+
+                    ecrire = csv.writer(file, delimiter=';',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                    for ligne in lignes_ordonnees:
+                        ecrire.writerow(ligne)
+    for ligne in lignes_ordonnees:
+                   print(ligne)
